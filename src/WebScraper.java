@@ -19,7 +19,7 @@ public class WebScraper {
         String contents = urlScanner.useDelimiter("\\A").next();
         urlScanner.close();
 
-        String[] stringArray = contents.split(" |\\.|\\,|\\;");
+        String[] stringArray = contents.split("[,; \n!?]+");
         int count = 0;
         for (int i = 0; i < stringArray.length; i++) {
             if (stringArray[i].equalsIgnoreCase(word)) {
